@@ -1,0 +1,4 @@
+rootProject.name='camel-statsd-component'
+
+include 'statsd-component-test'
+include 'statsd-component'

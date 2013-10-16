@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    group = 'com.training.camel'
+    version = "${versionMajor}.${versionMinor}.${versionBuild}"
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://repo.springsource.org/libs-snapshot"
+        }
+
+        ivy {
+            ivyPattern "$projectDir/repo/[organisation]/[module]-ivy-[revision].xml"
+            artifactPattern "$projectDir/repo/[organisation]/[module]-[revision](-[classifier]).[ext]"
+            url file(System.getProperty('user.home') + '/.ivylocal')
+        }
+    }
+
+    uploadArchives {
+        repositories {
+            ivy { url file(System.getProperty('user.home') + '/.ivylocal') }
+        }
+    }
+
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
+    }
+}
+

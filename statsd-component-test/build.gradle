@@ -1,0 +1,27 @@
+dependencies {
+
+    /* ---------------- spring dependencies ---------------- */
+    compile('org.springframework:spring-core:3.1.2.RELEASE')
+    compile('org.springframework:spring-beans:3.1.4.RELEASE')
+    compile('org.springframework:spring-context:3.1.4.RELEASE')
+    compile('org.springframework:spring-aop:3.1.4.RELEASE')
+
+    /* ---------------- camel dependencies ---------------- */
+    compile('org.apache.camel:camel-core:2.12.1')
+    compile('org.apache.camel:camel-spring:2.12.1')
+
+
+
+    /* ---------------- byte code tools ---------------- */
+    compile('cglib:cglib:3.0')
+
+    /* ---------------- test dependencies ---------------- */
+    compile('junit:junit:4.8.2')
+
+    /* ---------------- logger dependencies ---------------- */
+    compile('log4j:log4j:1.2.17')
+    compile('org.slf4j:slf4j-simple:1.6.4')
+    compile('org.slf4j:slf4j-api:1.6.4')
+    compile project(':statsd-component')
+}
+            

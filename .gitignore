@@ -1,6 +1,22 @@
+target
+out
+.gradle
 *.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+.idea
+=======
+
+# eclipse project file
+.pmd
+.ruleset
+.settings
+.classpath
+.project
+build
+test-output
+.springBeans
+/mingo-core/*.bat

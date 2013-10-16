@@ -1,0 +1,21 @@
+dependencies {
+
+    /* ---------------- camel dependencies ---------------- */
+    compile('org.apache.camel:camel-core:2.12.1')
+
+    /* ---------------- statsd dependencies ---------------- */
+    compile('com.timgroup:java-statsd-client:2.0.0')
+
+    /* ---------------- libs & tools ---------------- */
+    compile('com.google.guava:guava:15.0')
+    compile('commons-collections:commons-collections:3.2.1')
+    compile('org.apache.commons:commons-lang3:3.1')
+    /* ---------------- test dependencies ---------------- */
+    compile('junit:junit:4.8.2')
+
+    /* ---------------- logger dependencies ---------------- */
+    compile('log4j:log4j:1.2.17')
+    compile('org.slf4j:slf4j-simple:1.6.4')
+    compile('org.slf4j:slf4j-api:1.6.4')
+}
+            
