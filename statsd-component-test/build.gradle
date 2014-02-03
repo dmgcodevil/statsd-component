@@ -9,6 +9,8 @@ dependencies {
     /* ---------------- camel dependencies ---------------- */
     compile('org.apache.camel:camel-core:2.12.1')
     compile('org.apache.camel:camel-spring:2.12.1')
+  compile('org.apache.camel:camel-quartz:2.12.1')
+
 
 
 

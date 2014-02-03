@@ -21,8 +21,8 @@ public class Starter {
     public static void main(String[] args) {
         ApplicationContext applicationContext =
             new ClassPathXmlApplicationContext("classpath:spring/camel-context.xml");
-        StatsDSender statsDSender = applicationContext.getBean(StatsDSender.class);
-        statsDSender.doSend("test", 1);
+       // StatsDSender statsDSender = applicationContext.getBean(StatsDSender.class);
+        //statsDSender.doSend("test", 1);
 
 
    /*     try {
