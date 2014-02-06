@@ -1,5 +1,7 @@
 package com.training.camel.statsd;
 
+import com.training.camel.Resource;
+import com.training.camel.schedule.EventRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -21,6 +23,9 @@ public class Starter {
     public static void main(String[] args) {
         ApplicationContext applicationContext =
             new ClassPathXmlApplicationContext("classpath:spring/camel-context.xml");
+        Resource resource = (Resource) applicationContext.getBean("resource");
+        //resource.doPost("");
+        //eventRepository.getLastEvent();
        // StatsDSender statsDSender = applicationContext.getBean(StatsDSender.class);
         //statsDSender.doSend("test", 1);
 

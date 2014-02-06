@@ -9,11 +9,14 @@ public class Event {
 
     private String body;
 
+    private EventType eventType;
+
     public Event() {
     }
 
-    public Event(String body) {
+    public Event(String body, EventType eventType) {
         this.body = body;
+        this.eventType = eventType;
     }
 
     public String getBody() {
@@ -24,11 +27,19 @@ public class Event {
         this.body = body;
     }
 
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
+
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Event{");
-        sb.append("body='").append(body).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return new org.apache.commons.lang3.builder.ToStringBuilder(this)
+            .append("body", body)
+            .append("eventType", eventType)
+            .toString();
     }
 }

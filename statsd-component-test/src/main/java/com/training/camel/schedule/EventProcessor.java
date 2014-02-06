@@ -12,5 +12,8 @@ public class EventProcessor {
 
     public void process(Event event) {
         System.out.println("EventProcessor:: " + event);
+//        while (true){
+//
+//        }
     }
 }

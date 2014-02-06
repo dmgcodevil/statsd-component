@@ -9,26 +9,26 @@
        http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
+    <bean  id="serverProperties"
+            class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+        <property name="location">
+            <value>classpath:properties/test.properties</value>
+        </property>
+    </bean>
+
 
     <context:component-scan base-package="com.training.camel"/>
 
     <bean id="quartz" class="org.apache.camel.component.quartz.QuartzComponent">
-        <property name="startDelayedSeconds" value="1000000"/>
-        <!-- <property name="autoStartScheduler" value="true"/>-->
+        <property name="propertiesFile" value="/properties/quartz.properties"/>
     </bean>
 
     <camel:camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+
         <camel:package>com.training.camel</camel:package>
-        <!-- refer to a given route to be used -->
+        <camel:contextScan />
         <camel:template id="camelTemplate"/>
-        <route group="groupName" delayer="">
-            <from uri="bean:eventRepository?method=getLastEvent"/>
-            <to uri="bean:eventProcessor?method=process"/>
-        </route>
-        <route>
-            <from uri="quartz://groupName/timerName?cron=1 * * * * ?"/>
-            <to uri="bean:eventRepository?method=getLastEvent"/>
-        </route>
     </camel:camelContext>
 
 
